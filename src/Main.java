@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -14,9 +13,8 @@ public class Main {
         int ravenBonesCount = 0;        //Кости ворона
         int dumplingsCount = 0;         //Пельмени(а почему, собственно нет? xD )
         while (true) {
-            System.out.println();
             System.out.println("Добро пожаловать!\n");
-            System.out.println("Какое зелье хотите создать?\n" +
+            System.out.println("Какое зелье хотите приготовить?" +
                     "\n1 -  Эликсир зоркости" +
                     "\n2 -  Эликсир стойкости" +
                     "\n3 -  Эликсир скрытности" +
@@ -27,9 +25,6 @@ public class Main {
 
                 if (button == 1) {
                     System.out.println("Для эликсира зоркости нужно:\n3 Жабьих глаза + 1 кость ворона\n");
-                    {
-                        System.out.println();
-                    }
                     toadEyesCount = inputEyes();
                     ravenBonesCount = inputCount();
                     if (toadEyesCount >= 3 && ravenBonesCount >= 1) {
@@ -38,12 +33,11 @@ public class Main {
                         System.out.println("Недостаточно ингредиентов! ");
                     }
 
-                } else if (button == 2) {
+                }else if (button == 2) {
                     System.out.println("Для эликсира стойкости нужно:\n2 кости ворона + 4 пельменя\n");
-                    System.out.println();
                     ravenBonesCount = inputCount();
                     dumplingsCount = inputDumpling();
-                    if (toadEyesCount >= 2 && dumplingsCount >= 4) {
+                    if (ravenBonesCount >= 2 && dumplingsCount >= 4) {
                         System.out.println("Вы приготовили эликсир стойкости! ");
                     } else {
                         System.out.println("Недостаточно ингредиентов! ");
@@ -51,7 +45,6 @@ public class Main {
 
                 } else if (button == 3) {
                     System.out.println("Для эликсира скрытности нужно:\n7 слез вурдалака + 1 пельмень + 2 жабьих глаза\n");
-                    System.out.println();
                     ghoulTearsCount = inputQhoul();
                     dumplingsCount = inputDumpling();
                     toadEyesCount = inputEyes();
@@ -63,7 +56,6 @@ public class Main {
 
                 } else if (button == 4) {
                     System.out.println("Для запретного эликсира нужно:\n5 слез вурдалака + 10 пельменей + 4 жабьих глаза + 3 кости ворона\n");
-                    System.out.println();
                     ghoulTearsCount = inputQhoul();
                     dumplingsCount = inputDumpling();
                     toadEyesCount = inputEyes();
@@ -101,7 +93,7 @@ public class Main {
         System.out.println("Введите кол-во слез вурдалака: ");
         return new Scanner(System.in).nextInt();
     }
-    public static int inputCommands(){
+    public static int inputCommands() {
        return new Scanner(System.in).nextInt();
     }
 }
